@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MBTI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f0f4fc;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #284a8c;
+      color: white;
+      padding: 2rem 1rem;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 1.2rem;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 0.5rem;
+      color: white;
+    }
+
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      margin: 1rem 0;
+      font-size: 1.05rem;
+    }
+
+    .sidebar a i {
+      margin-right: 0.5rem;
+      font-style: normal;
+    }
+
+    .content {
+      flex: 1;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .container h1 {
+      text-align: center;
+      color: #284a8c;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1.5rem;
+    }
+
+    .card h2 {
+      color: #284a8c;
+      font-size: 1.4rem;
+      margin-top: 0;
+    }
+
+    .card p, .card li {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .card ul {
+      padding-left: 1.5rem;
+    }
+
+    .button-area {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .toggle-button {
+      background-color: #284a8c;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-button:hover {
+      background-color: #1f3c70;
+    }
+
+    /* Modal 彈跳視窗樣式 */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 10% auto;
+      padding: 1rem;
+      border: 2px solid #284a8c;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>吳昕恩</h2>
+    <a href="index.html"><i>🏠</i> 首頁</a>
+    <a href="summary.html"><i>🌟</i> 個人特質</a>
+    <a href="interest.html"><i>🎨</i> 興趣何倫碼</a>
+    <a href="test-cpas.html"><i>📊</i> CPAS 測評</a>
+    <a href="mbti.html"><i>🧠</i> MBTI</a>
+    <a href="future.html"><i>💼</i> 職涯規劃</a>
+    <a href="pu.html"><i>🎓</i> 靜宜大學</a>
+    <a href="csim.html"><i>💻</i> 資訊管理系</a>
+  </div>
+
+  <div class="content">
+    <div class="container">
+      <h1>MBTI 性格分析</h1>
+
+      <div class="card">
+        <h2>📌 我的 MBTI 類型</h2>
+        <p>我的 MBTI 性格是 <strong>ISFJ（守護者）</strong>。這類人格擅長關心他人，習慣默默付出，並具備穩定與實際的特質。也常被形容為有耐心、細膩、忠誠，是生活中值得信賴的好夥伴。</p>
+      </div>
+
+      <div class="card">
+        <h2>💡 ISFJ 的特質</h2>
+        <ul>
+          <li>溫和體貼，擅長傾聽與照顧他人</li>
+          <li>負責任、有條理、重視細節</li>
+          <li>內向但人際深度佳，與熟人互動緊密</li>
+          <li>偏好熟悉穩定環境，不喜歡劇烈變化</li>
+          <li>對於工作與學習都很踏實執著</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>🌟 我對這結果的看法</h2>
+        <p>我覺得這份測驗反映得很真實，尤其是關於「責任感」和「內向但重人際關係」這部分。生活中我喜歡規劃事情，有條不紊的步調讓我感到安心，也更能發揮自己的強項。</p>
+      </div>
+
+      <div class="button-area">
+        <button class="toggle-button" onclick="openModal()">📄 點我看測驗圖</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 彈跳視窗 -->
+  <div id="mbtiModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img src="mbti-result.png" alt="MBTI 測驗圖" />
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById("mbtiModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("mbtiModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("mbtiModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
