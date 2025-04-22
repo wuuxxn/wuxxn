@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>興趣何倫碼</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #eaf2fb;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #284a8c;
+      color: white;
+      padding: 2rem 1rem;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 1.2rem;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 0.5rem;
+      color: white;
+    }
+
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      margin: 1rem 0;
+      font-size: 1.05rem;
+    }
+
+    .sidebar a i {
+      margin-right: 0.5rem;
+      font-style: normal;
+    }
+
+    .content {
+      flex: 1;
+      padding: 2rem;
+    }
+
+    .content h1 {
+      color: #284a8c;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .section {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+      max-width: 900px;
+      margin: 1.5rem auto;
+    }
+
+    .section h2 {
+      color: #284a8c;
+      margin-top: 0;
+    }
+
+    .section ul {
+      padding-left: 1.5rem;
+    }
+
+    .btn-toggle {
+      padding: 0.5rem 1rem;
+      background-color: #284a8c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: block;
+      margin: 0 auto 1rem;
+    }
+
+    .btn-toggle:hover {
+      background-color: #1c3564;
+    }
+
+    /* Modal Style - 彈出視窗 */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      max-width: 60%;
+      max-height: 60%;
+      overflow: auto;
+      position: relative;
+    }
+
+    .modal-content img {
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border: 2px solid #284a8c;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .modal-content {
+        max-width: 90%;
+        max-height: 80%;
+      }
+
+      .modal-content img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>吳昕恩</h2>
+    <a href="index.html"><i>🏠</i> 首頁</a>
+    <a href="summary.html"><i>🌟</i> 個人特質</a>
+    <a href="interest.html"><i>🎨</i> 興趣何倫碼</a>
+    <a href="test-cpas.html"><i>📊</i> CPAS 測評</a>
+    <a href="mbti.html"><i>🧠</i> MBTI</a>
+    <a href="future.html"><i>💼</i> 職涯規劃</a>
+    <a href="pu.html"><i>🎓</i> 靜宜大學</a>
+    <a href="csim.html"><i>💻</i> 資訊管理系</a>
+  </div>
+
+  <div class="content">
+    <h1>興趣何倫碼</h1>
+
+    <div class="section">
+      <h2>🎯 我的興趣何倫碼結果：S（社會型）× C（事務型）</h2>
+      <p>
+        我的興趣何倫碼顯示我屬於 S（社會型）與 C（事務型）的組合。這表示我喜歡與人互動、協助他人，並擁有井然有序的處事風格與責任感。
+        社會型讓我具備良好的人際敏感度與同理心，而事務型讓我重視規律、細節與計劃性，適合從事穩定又具有服務性質的工作。
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>💡 特質分析</h2>
+      <ul>
+        <li>善於傾聽與關懷他人</li>
+        <li>做事細心，注重規劃與流程</li>
+        <li>在團隊中是穩定而可靠的夥伴</li>
+        <li>喜歡協助、服務與支持別人</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>📌 適合的職業方向</h2>
+      <ul>
+        <li>學校行政、人資、圖書館員、資料處理人員</li>
+        <li>社工、心理輔導、教育相關助理</li>
+        <li>辦公室行政、資料整理、病歷管理</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <button class="btn-toggle" onclick="openModal()">📄 點我看測驗圖</button>
+    </div>
+  </div>
+
+  <!-- Modal 彈出圖示 -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img src="interest-result.png" alt="興趣何倫碼測驗圖" />
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById("imageModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CPAS 測評結果</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #eaf2fb;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #284a8c;
+      color: white;
+      padding: 2rem 1rem;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 1.2rem;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 0.5rem;
+    }
+
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      margin: 1rem 0;
+      font-size: 1.05rem;
+    }
+
+    .sidebar a i {
+      margin-right: 0.5rem;
+    }
+
+    .content {
+      flex: 1;
+      padding: 2rem;
+    }
+
+    .content h1 {
+      color: #284a8c;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .section {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+      max-width: 900px;
+      margin: 1.5rem auto;
+    }
+
+    .section h2 {
+      color: #284a8c;
+      margin-top: 0;
+    }
+
+    .btn-toggle {
+      padding: 0.5rem 1rem;
+      background-color: #284a8c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: block;
+      margin: 0 auto 1rem;
+    }
+
+    .btn-toggle:hover {
+      background-color: #1c3564;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.75rem;
+      text-align: center;
+    }
+
+    th {
+      background-color: #284a8c;
+      color: white;
+    }
+
+    td.stars {
+      font-size: 1.2rem;
+      color: #f4b400;
+    }
+
+    /* Modal Style */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      max-width: 60%;
+      max-height: 60%;
+      overflow: auto;
+      position: relative;
+    }
+
+    .modal-content img {
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border: 2px solid #284a8c;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .modal-content {
+        max-width: 90%;
+        max-height: 80%;
+      }
+
+      .modal-content img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>吳昕恩</h2>
+    <a href="index.html"><i>🏠</i> 首頁</a>
+    <a href="summary.html"><i>🌟</i> 個人特質</a>
+    <a href="interest.html"><i>🎨</i> 興趣何倫碼</a>
+    <a href="test-cpas.html"><i>📊</i> CPAS 測評</a>
+    <a href="mbti.html"><i>🧠</i> MBTI</a>
+    <a href="future.html"><i>💼</i> 職涯規劃</a>
+    <a href="pu.html"><i>🎓</i> 靜宜大學</a>
+    <a href="csim.html"><i>💻</i> 資訊管理系</a>
+  </div>
+
+  <div class="content">
+    <h1>CPAS 測評結果</h1>
+
+    <div class="section">
+      <h2>🧭 測驗說明</h2>
+      <p>
+        本測驗透過行為特質與潛在能力評估，協助分析個人職能傾向，提供職涯發展的參考依據。以下為我的測驗結果分析。
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>📌 核心職能分析</h2>
+      <ul>
+        <li><strong>執行力：</strong>適中，穩定完成任務</li>
+        <li><strong>統御力：</strong>需培養領導與主動性</li>
+        <li><strong>親和力：</strong>穩定中立，可進一步訓練互動能力</li>
+        <li><strong>開創力：</strong>創新力較弱，適合制度內穩定環境</li>
+        <li><strong>應變力：</strong>低，應練習適應環境改變</li>
+        <li><strong>敏感力：</strong>高，擅長發現問題、預防風險</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>📊 職能圖表</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>職能項目</th>
+            <th>能力等級</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>執行力</td>
+            <td class="stars">★★★☆☆</td>
+          </tr>
+          <tr>
+            <td>統御力</td>
+            <td class="stars">★☆☆☆☆</td>
+          </tr>
+          <tr>
+            <td>親和力</td>
+            <td class="stars">★★★☆☆</td>
+          </tr>
+          <tr>
+            <td>開創力</td>
+            <td class="stars">★☆☆☆☆</td>
+          </tr>
+          <tr>
+            <td>應變力</td>
+            <td class="stars">★☆☆☆☆</td>
+          </tr>
+          <tr>
+            <td>敏感力</td>
+            <td class="stars">★★★★☆</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>🔚 測驗總結</h2>
+      <p>
+        綜合 CPAS 測驗結果，我在執行任務、規劃與風險察覺方面表現穩定，適合擔任需要細心與條理的職務，如行政、資料管理或人資等職位。
+        雖然應變與創新能力較低，但透過持續訓練與參與不同挑戰，可逐步提升整體工作適應力。未來可加強團隊合作與創意思維，拓展更多發展方向。
+      </p>
+    </div>
+
+    <div class="section">
+      <button class="btn-toggle" onclick="openModal()">📄 點我看測驗圖</button>
+    </div>
+  </div>
+
+  <!-- Modal 彈出視窗 -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img src="IMG_1581.jpeg" alt="CPAS 測驗圖">
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById("imageModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
