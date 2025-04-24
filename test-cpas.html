@@ -10,7 +10,6 @@
       font-family: 'Helvetica Neue', sans-serif;
       background-color: #eaf2fb;
       display: flex;
-      flex-direction: row;
     }
 
     .sidebar {
@@ -20,7 +19,6 @@
       padding: 2rem 1rem;
       height: 100vh;
       box-sizing: border-box;
-      flex-shrink: 0;
     }
 
     .sidebar h2 {
@@ -29,7 +27,6 @@
       font-size: 1.5rem;
       border-bottom: 2px solid #fff;
       padding-bottom: 0.5rem;
-      color: white;
     }
 
     .sidebar a {
@@ -44,7 +41,6 @@
 
     .sidebar a i {
       margin-right: 0.5rem;
-      font-style: normal;
     }
 
     .content {
@@ -71,10 +67,6 @@
     .section h2 {
       color: #284a8c;
       margin-top: 0;
-    }
-
-    .section ul {
-      padding-left: 1.5rem;
     }
 
     .btn-toggle {
@@ -115,16 +107,16 @@
       color: #f4b400;
     }
 
-    /* Modal 相關樣式 */
+    /* Modal Style */
     .modal {
       display: none;
       position: fixed;
-      z-index: 100;
+      z-index: 999;
       left: 0;
       top: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
       justify-content: center;
       align-items: center;
     }
@@ -133,14 +125,15 @@
       background-color: white;
       padding: 1rem;
       border-radius: 10px;
-      max-width: 90%;
-      max-height: 90%;
+      max-width: 60%;
+      max-height: 60%;
       overflow: auto;
       position: relative;
     }
 
     .modal-content img {
-      max-width: 100%;
+      max-width: 500px;
+      width: 100%;
       height: auto;
       display: block;
       margin: 0 auto;
@@ -148,35 +141,22 @@
       border-radius: 10px;
     }
 
-    .close-btn {
+    .close {
       position: absolute;
       top: 10px;
       right: 15px;
-      font-size: 1.5rem;
-      color: #333;
+      font-size: 24px;
       cursor: pointer;
     }
 
-    /* RWD 響應式設計 */
     @media (max-width: 768px) {
-      body {
-        flex-direction: column;
+      .modal-content {
+        max-width: 90%;
+        max-height: 80%;
       }
 
-      .sidebar {
-        width: 100%;
-        height: auto;
-        padding: 1rem;
-        text-align: center;
-      }
-
-      .content {
-        padding: 1rem;
-      }
-
-      .btn-toggle {
-        width: 100%;
-        max-width: 300px;
+      .modal-content img {
+        max-width: 100%;
       }
     }
   </style>
@@ -199,7 +179,9 @@
 
     <div class="section">
       <h2>🧭 測驗說明</h2>
-      <p>本測驗透過行為特質與潛在能力評估，協助分析個人職能傾向，提供職涯發展的參考依據。以下為我的測驗結果分析。</p>
+      <p>
+        本測驗透過行為特質與潛在能力評估，協助分析個人職能傾向，提供職涯發展的參考依據。以下為我的測驗結果分析。
+      </p>
     </div>
 
     <div class="section">
@@ -224,12 +206,30 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>執行力</td><td class="stars">★★★☆☆</td></tr>
-          <tr><td>統御力</td><td class="stars">★☆☆☆☆</td></tr>
-          <tr><td>親和力</td><td class="stars">★★★☆☆</td></tr>
-          <tr><td>開創力</td><td class="stars">★☆☆☆☆</td></tr>
-          <tr><td>應變力</td><td class="stars">★☆☆☆☆</td></tr>
-          <tr><td>敏感力</td><td class="stars">★★★★☆</td></tr>
+          <tr>
+            <td>執行力</td>
+            <td class="stars">★★★☆☆</td>
+          </tr>
+          <tr>
+            <td>統御力</td>
+            <td class="stars">★☆☆☆☆</td>
+          </tr>
+          <tr>
+            <td>親和力</td>
+            <td class="stars">★★★☆☆</td>
+          </tr>
+          <tr>
+            <td>開創力</td>
+            <td class="stars">★☆☆☆☆</td>
+          </tr>
+          <tr>
+            <td>應變力</td>
+            <td class="stars">★☆☆☆☆</td>
+          </tr>
+          <tr>
+            <td>敏感力</td>
+            <td class="stars">★★★★☆</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -247,29 +247,22 @@
     </div>
   </div>
 
-  <!-- Modal 視窗 -->
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal()">×</span>
+  <!-- Modal 彈出視窗 -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close" onclick="closeModal()">&times;</span>
       <img src="IMG_1581.jpeg" alt="CPAS 測驗圖">
     </div>
   </div>
 
   <script>
     function openModal() {
-      document.getElementById("myModal").style.display = "flex";
+      document.getElementById("imageModal").style.display = "flex";
     }
 
     function closeModal() {
-      document.getElementById("myModal").style.display = "none";
+      document.getElementById("imageModal").style.display = "none";
     }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById("myModal");
-      if (event.target === modal) {
-        closeModal();
-      }
-    };
   </script>
 </body>
 </html>
