@@ -9,18 +9,19 @@
       margin: 0;
       font-family: 'Helvetica Neue', sans-serif;
       background-color: #f0f4fc;
-      display: flex;
-      flex-direction: row;
+      overflow-y: scroll;
     }
 
     .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 220px;
+      height: 100vh;
       background-color: #284a8c;
       color: white;
       padding: 2rem 1rem;
-      height: 100vh;
       box-sizing: border-box;
-      flex-shrink: 0;
     }
 
     .sidebar h2 {
@@ -48,9 +49,10 @@
     }
 
     .content {
-      flex: 1;
+      margin-left: 220px;
       padding: 2rem;
-      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
     }
 
     .about-box {
@@ -58,8 +60,9 @@
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      max-width: 900px;
-      margin: 0 auto;
+      max-width: 800px;
+      width: 100%;
+      position: relative;
     }
 
     .profile-pic {
@@ -68,9 +71,9 @@
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid #284a8c;
-      float: right;
-      margin-left: 1rem;
-      margin-bottom: 1rem;
+      position: absolute;
+      top: 20px;
+      right: 20px;
     }
 
     .text-content h1 {
@@ -110,13 +113,9 @@
       text-decoration: underline;
     }
 
-    /* RWD 響應式設計 */
     @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-      }
-
       .sidebar {
+        position: static;
         width: 100%;
         height: auto;
         padding: 1rem;
@@ -124,17 +123,19 @@
       }
 
       .content {
+        margin-left: 0;
         padding: 1rem;
-      }
-
-      .profile-pic {
-        float: none;
-        display: block;
-        margin: 0 auto 1rem auto;
       }
 
       .about-box {
         padding: 1rem;
+        margin: 0 auto;
+      }
+
+      .profile-pic {
+        position: static;
+        display: block;
+        margin: 0 auto 1rem;
       }
     }
   </style>
@@ -154,7 +155,7 @@
 
   <div class="content">
     <div class="about-box">
-      <img src="my_photo.jpg" alt="個人頭像" class="profile-pic" />
+      <img src="my_photo.jpg.jpeg" alt="個人頭像" class="profile-pic" />
       <div class="text-content">
         <h1>關於我</h1>
         <p>
@@ -182,7 +183,7 @@
 
         <div class="section">
           <h2>📬 連絡方式</h2>
-          <p><strong>電話：</strong><a href="tel:+886972732339">+886 972 732 339</a></p>
+          <p><strong>電話：</strong>+886 972 732 339</p>
           <p><strong>Email：</strong>
             <a href="mailto:owen20050723@gmail.com">owen20050723@gmail.com</a>
           </p>
